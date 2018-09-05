@@ -18,8 +18,7 @@ pipeline {
         steps {
           container('maven') {
             sh "mvn versions:set -DnewVersion=$PREVIEW_VERSION"
-            sh "mvn install"
-            sh "jx step nexus release"
+            sh 'mvn clean deploy'
           }
         }
       }
