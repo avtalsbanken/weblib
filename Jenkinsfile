@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
       ORG               = 'robertgartman'
-      APP_NAME          = 'test3'
+      APP_NAME          = 'test3-branch'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
