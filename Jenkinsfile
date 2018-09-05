@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
       ORG               = 'robertgartman'
-      APP_NAME          = 'projartifid'
+      APP_NAME          = 'test3'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
