@@ -38,6 +38,9 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
             sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
             sh 'mvn clean deploy'
+
+            updatebot push-version --kind maven se.avtalsbanken:weblib ${VERSION}
+            updatebot update
           }
         }
       }
