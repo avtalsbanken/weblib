@@ -4,8 +4,6 @@ pipeline {
     }
     environment {
       ORG               = 'robertgartman'
-      APP_NAME          = 'test3'
-      CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
     stages {
       stage('CI Build and push snapshot') {
@@ -43,8 +41,8 @@ pipeline {
             sh "git tag -fa v\$(cat VERSION) -m 'Release version \$(cat VERSION)'"
             sh "git push origin v\$(cat VERSION)"
 
-            sh 'updatebot push-version --kind maven se.avtalsbanken:weblib ${VERSION} -debug'
-            sh 'updatebot update -debug'
+            sh 'updatebot push-version --kind maven se.avtalsbanken:weblib \$(cat VERSION)'
+            sh 'updatebot update'
           }
         }
       }
