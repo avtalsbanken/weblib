@@ -38,7 +38,7 @@ pipeline {
             sh 'mvn deploy'
 
             sh "git commit -a -m \"release \$(cat VERSION)\""
-            sh "git tag -fa v\$(cat VERSION) -m \"Release version \\$(cat VERSION) $$(cat VERSION)\""
+            sh "git tag -fa v\$(cat VERSION) -m \"Release version \$(cat VERSION)\""
             sh "git push origin v\$(cat VERSION)"
 
             sh 'updatebot push-version --kind maven se.avtalsbanken:weblib \$(cat VERSION)'
