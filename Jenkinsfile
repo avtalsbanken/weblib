@@ -34,8 +34,7 @@ pipeline {
             sh "jx step git credentials"
             // so we can retrieve the version in later steps
             sh "echo \$(jx-release-version) > VERSION"
-            sh "mvn clean versions:set -DnewVersion=\$(cat VERSION)"
-            sh 'mvn deploy'
+            sh "mvn clean versions:set -DnewVersion=\$(cat VERSION) deploy"
 
             sh "git commit -a -m \"release \$(cat VERSION)\""
             sh "git tag -fa v\$(cat VERSION) -m \"Release version \$(cat VERSION)\""
