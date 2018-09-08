@@ -41,7 +41,7 @@ pipeline {
             sh "git push origin v\$(cat VERSION)"
 
             sh 'updatebot push-version --kind maven se.avtalsbanken:weblib \$(cat VERSION)'
-            sh 'updatebot update'
+            sh 'updatebot update-loop --loop-time-ms 70000 --poll-time-ms 15000'
           }
         }
       }
