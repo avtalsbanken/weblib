@@ -2,8 +2,6 @@ pipeline {
     agent {
       label "jenkins-maven"
     }
-    environment {
-    }
     stages {
       stage('CI Build and push snapshot') {
         when {
