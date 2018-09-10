@@ -23,7 +23,7 @@ pipeline {
       }
       stage('Build Release') {
         when {
-          branch not 'PR-*'
+          not branch 'PR-*'
         }
         steps {
           container('maven') {
