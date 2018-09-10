@@ -3,7 +3,6 @@ pipeline {
       label "jenkins-maven"
     }
     environment {
-      ORG = 'robertgartman'
     }
     stages {
       stage('CI Build and push snapshot') {
