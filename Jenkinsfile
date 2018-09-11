@@ -23,7 +23,7 @@ pipeline {
       // ************************************
       stage('Build feature') {
         when {
-            branch 'master'
+            branch 'feature*'
         }
         steps {
           container('maven') {
