@@ -34,8 +34,8 @@ pipeline {
             sh "mvn clean versions:set -DnewVersion=\$(cat VERSION)"
             sh "mvn deploy"
 
-            sh "git commit -a -m \"feature $(cat VERSION)\""
-            sh "git tag -fa v\$(cat VERSION) -m \"feature version $(cat VERSION)\""
+            sh "git commit -a -m \"feature \$(cat VERSION)\""
+            sh "git tag -fa v\$(cat VERSION) -m \"feature version \$(cat VERSION)\""
             sh "git push origin v\$(cat VERSION)"
 
             sh 'updatebot push-version --kind maven --ref \$BRANCH_NAME se.avtalsbanken:weblib \$(cat VERSION)'
