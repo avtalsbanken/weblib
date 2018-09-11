@@ -40,7 +40,7 @@ pipeline {
             sh "git tag -fa v\$(cat VERSION) -m \"Release version \$(cat VERSION)\""
             sh "git push origin v\$(cat VERSION)"
 
-            sh 'updatebot push-version --kind maven se.avtalsbanken:weblib \$(cat VERSION)'
+            sh 'updatebot push-version --kind maven --ref \$BRANCH_NAME se.avtalsbanken:weblib \$(cat VERSION)'
             sh 'updatebot update-loop --loop-time-ms 240000 --poll-time-ms 20000'
           }
         }
