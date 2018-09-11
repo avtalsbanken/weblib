@@ -18,6 +18,9 @@ pipeline {
           }
         }
       }
+      // ************************************
+      //   Build feature
+      // ************************************
       stage('Build feature') {
         when {
             branch 'master'
@@ -42,6 +45,9 @@ pipeline {
           }
         }
       }
+      // ************************************
+      //   Build Release (master)
+      // ************************************
       stage('Build Release (master)') {
         when {
             branch 'master'
