@@ -1,5 +1,6 @@
 
 .project
+.updatebot-repos
 .classpath
 .idea
 .cache
