@@ -1,0 +1,10 @@
+
+.project
+.updatebot-repos
+.classpath
+.idea
+.cache
+.DS_Store
+*.im?
+target
+work
